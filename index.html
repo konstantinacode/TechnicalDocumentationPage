@@ -1,0 +1,520 @@
+<!--
+  CodePen URL:
+  https://codepen.io/KonstantinaCode/full/LKoOvE
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Technical Documentation Page</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="main-header">
+    <img src="./img/SassLogo.png" alt="Sass Logo" class="logo" />
+  </header>
+  <div id="main">
+    <nav id="navbar">
+      <header>
+        <h1>Sass Documentation</h1>
+        <h4><a href="#Introduction" class="nav-link">Introduction</a></h4>
+        <h4><a href="#Syntax" class="nav-link">Syntax</a></h4>
+        <h4><a href="#Style_Rules" class="nav-link">Style Rules</a></h4>
+        <h4><a href="#Variables" class="nav-link">Variables</a></h4>
+        <h4><a href="#At-Rules" class="nav-link">At-Rules</a></h4>
+      </header>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>
+          <h2>Introduction</h2>
+        </header>
+        <p class="sub-title">
+          Sass is a stylesheet language that’s compiled to CSS. It allows you
+          to use variables, nested rules, mixins, functions, and more, all
+          with a fully CSS-compatible syntax. Sass helps keep large
+          stylesheets well-organized and makes it easy to share design within
+          and across projects.
+        </p>
+        <ul>
+          <li>
+            If you’re looking for an introduction to Sass, check out
+            <a href="https://sass-lang.com/guide">the tutorial</a> .
+          </li>
+          <li>
+            If you want to look up a built-in Sass function, look no further
+            than
+            <a href="https://sass-lang.com/documentation/functions">
+              the function reference.</a>
+          </li>
+          <li>
+            If you’re calling Sass from JavaScript, you may want the
+            <a href="https://github.com/sass/node-sass#usage">JS API documentation.</a>
+          </li>
+          <li>
+            Or the
+            <a href="https://pub.dev/documentation/sass/latest/sass/sass-library.html">Dart API documentation</a>
+            if you’re calling it from Dart.
+          </li>
+          <li>
+            Otherwise, use the table of contents for the language reference!
+          </li>
+        </ul>
+      </section>
+      <section class="main-section" id="Syntax">
+        <header>
+          <h2>Syntax</h2>
+        </header>
+        <p class="sub-title">
+          Sass supports two different syntaxes. Each one can import the other,
+          so it’s up to you and your team which one to choose.
+        </p>
+        <h4>SCSS</h4>
+        <p>
+          The SCSS syntax uses the file extension .scss. With a few small
+          exceptions, it’s a superset of CSS, which means essentially all
+          valid CSS is valid SCSS as well. Because of its similarity to CSS,
+          it’s the easiest syntax to get used to and the most popular.
+        </p>
+        <p>SCSS looks like this:</p>
+        <div class="code">
+          <code>
+              @mixin button-base() {
+              <pre>   @include typography(button); </pre>
+              <pre>   @include ripple-surface; </pre>
+              <pre>   @include ripple-radius-bounded; </pre>
+              <br />
+              <pre>   display: inline-flex; </pre>
+              <pre>     position: relative; </pre>
+              <pre>     height: $button-height; </pre>
+              <pre>     border: none; </pre>
+              <pre>     vertical-align: middle; </pre>
+              <br />
+              <pre>   &:hover { cursor: pointer; }</pre>
+              <br />
+              <pre>   &:disabled { </pre>
+              <pre>     color: $mdc-button-disabled-ink-color; </pre>
+              <pre>     cursor: default;</pre>
+              <pre>     pointer-events: none; </pre>
+              <pre>   } </pre>
+              }
+            </code>
+        </div>
+        <h4>The Indented Syntax</h4>
+        <p>
+          The indented syntax was Sass’s original syntax, and so it uses the
+          file extension .sass. Because of this extension, it’s sometimes just
+          called “Sass”. The indented syntax supports all the same features as
+          SCSS, but it uses indentation instead of curly braces and semicolons
+          to describe the format of the document.
+        </p>
+        <p>
+          In general, any time you’d write curly braces in CSS or SCSS, you
+          can just indent one level deeper in the indented syntax. And any
+          time a line ends, that counts as a semicolon. There are also a few
+          additional differences in the indented syntax that are noted
+          throughout the reference.
+        </p>
+        <p>The indented syntax looks like this:</p>
+        <div class="code">
+          <code>
+              @mixin button-base()
+              <pre>   @include typography(button) </pre>
+              <pre>   @include ripple-surface </pre>
+              <pre>   @include ripple-radius-bounded </pre>
+              <br />
+              <pre>   display: inline-flex </pre>
+              <pre>     position: relative </pre>
+              <pre>     height: $button-height </pre>
+              <pre>     border: none </pre>
+              <pre>     vertical-align: middle </pre>
+              <br />
+              <pre>   &:hover </pre>
+              <pre>     cursor: pointer</pre>
+              <br />
+              <pre>   &:disabled  </pre>
+              <pre>     color: $mdc-button-disabled-ink-color </pre>
+              <pre>     cursor: default</pre>
+              <pre>     pointer-events: none </pre>
+            </code>
+        </div>
+      </section>
+      <section class="main-section" id="Style_Rules">
+        <header>
+          <h2>Style Rules</h2>
+        </header>
+        <p class="sub-title">
+          Style rules are the foundation of Sass, just like they are for CSS.
+          And they work the same way: you choose which elements to style with
+          a selector, and declare properties that affect how those elements
+          look.
+        </p>
+        <div class="two-column">
+          <div class="code">
+            <h5>SCSS</h5>
+            <code>
+                .button {
+                <pre>   padding: 3px 10px;</pre>
+                <pre>   font-size: 12px; </pre>
+                <pre>   border-radius: 3px; </pre>
+                <pre>   border: 1px solid #e1e4e8; </pre>
+                }
+              </code>
+          </div>
+          <div class="code">
+            <h5>CSS</h5>
+            <code>
+                .button {
+                <pre>   padding: 3px 10px;</pre>
+                <pre>   font-size: 12px; </pre>
+                <pre>   border-radius: 3px; </pre>
+                <pre>   border: 1px solid #e1e4e8; </pre>
+                }
+              </code>
+          </div>
+        </div>
+        <h4>Nesting</h4>
+        <p>
+          But Sass wants to make your life easier. Rather than repeating the
+          same selectors over and over again, you can write one style rules
+          inside another. Sass will automatically combine the outer rule’s
+          selector with the inner rule’s.
+        </p>
+        <div class="two-column">
+          <div class="code">
+            <h5>SCSS</h5>
+            <code>
+                nav {
+                <pre>   ul {</pre>
+                <pre>     margin: 0;</pre>
+                <pre>     padding: 0;</pre>
+                <pre>     list-style: none;</pre>
+                <pre>   }</pre>
+                <pre>   li { display: inline-block; }</pre>
+                <pre>   a {</pre>
+                <pre>     display: block;</pre>
+                <pre>     padding: 6px 12px;</pre>
+                <pre>     text-decoration: none;</pre>
+                <pre>   }</pre>
+                }
+              </code>
+          </div>
+          <div class="code">
+            <h5>CSS</h5>
+            <code>
+                nav ul {
+                <pre>   margin: 0;</pre>
+                <pre>   padding: 0;</pre>
+                <pre>   list-style: none;</pre>
+                } <br />
+                nav li {
+                <pre>   display: inline-block;</pre>
+                } <br />
+                nav a {
+                <pre>   display: block;</pre>
+                <pre>   padding: 6px 12px;</pre>
+                <pre>   text-decoration: none;</pre>
+                }
+              </code>
+          </div>
+        </div>
+        <div class="warning">
+          <h5>Heads up!</h5>
+          <p>
+            Nested rules are super helpful, but they can also make it hard to
+            visualize how much CSS you’re actually generating. The deeper you
+            nest, the more bandwidth it takes to serve your CSS and the more
+            work it takes the browser to render it. Keep those selectors
+            shallow!
+          </p>
+        </div>
+        <h5>Selector Lists</h5>
+        <p>
+          Nested rules are clever about handling selector lists (that is,
+          comma-separated selectors). Each complex selector (the ones between
+          the commas) is nested separately, and then they’re combined back
+          into a selector list.
+        </p>
+        <div class="two-column">
+          <div class="code">
+            <h5>SCSS</h5>
+            <code>
+                .alert, .warning {
+                <pre>   ul, p {</pre>
+                <pre>     margin-right: 0;</pre>
+                <pre>     margin-left: 0;</pre>
+                <pre>     padding-bottom: 0;</pre>
+                <pre>   }</pre>
+                }
+              </code>
+          </div>
+          <div class="code">
+            <h5>CSS</h5>
+            <code>
+                .alert ul, .alert p, .warning ul, .warning p {
+                <pre>   margin-right: 0;</pre>
+                <pre>   margin-left: 0;</pre>
+                <pre>   padding-bottom: 0;</pre>
+                }
+              </code>
+          </div>
+        </div>
+        <h5>Selector Combinators</h5>
+        <p>
+          You can nest selectors that use combinators as well. You can put the
+          combinator at the end of the outer selector, at the beginning of the
+          inner selector, or even all on its own in between the two.
+        </p>
+        <div class="two-column">
+          <div class="code">
+            <h5>SCSS</h5>
+            <code>
+                ul > {
+                <pre>   li {</pre>
+                <pre>     list-style-type: none;</pre>
+                <pre>   }</pre>
+                } <br />
+                h2 {
+                <pre>   + p {</pre>
+                <pre>     border-top: 1px solid gray;</pre>
+                <pre>   }</pre>
+                } <br />
+                p {
+                <pre>   ~ {</pre>
+                <pre>     span {</pre>
+                <pre>       opacity: 0.8;</pre>
+                <pre>     }</pre>
+                <pre>   }</pre>
+                }
+              </code>
+          </div>
+          <div class="code">
+            <h5>CSS</h5>
+            <code>
+                ul > li {
+                <pre>   list-style-type: none;</pre>
+                } <br />
+                h2 + p {
+                <pre>   border-top: 1px solid gray;</pre>
+                } <br />
+                p ~ span {
+                <pre>   opacity: 0.8;</pre>
+                }
+              </code>
+          </div>
+        </div>
+        <h5>Advanced Nesting</h5>
+        <p>
+          If you want to do more with your nested style rules than just
+          combine them in order with the descendant combinator (that is, a
+          plain space) separating them, Sass has your back. See the parent
+          selector documentation for more details.
+        </p>
+        <h4>Interpolation</h4>
+        <p>
+          You can use interpolation to inject values from expressions like
+          variables and function calls into your selectors. This is
+          particularly useful when you’re writing mixins, since it allows you
+          to create selectors from parameters your users pass in.
+        </p>
+        <div class="two-column">
+          <div class="code">
+            <h5>SCSS</h5>
+            <code>
+                @mixin define-emoji($name, $glyph) {
+                <pre>   span.emoji-#{$name} {</pre>
+                <pre>     font-family: IconFont;</pre>
+                <pre>     font-variant: normal;</pre>
+                <pre>     font-weight: normal;</pre>
+                <pre>     content: $glyph;</pre>
+                <pre>   }</pre>
+
+                }<br />
+                @include define-emoji("women-holding-hands", "👭");
+              </code>
+          </div>
+          <div class="code">
+            <h5>CSS</h5>
+            <code>
+                @charset "UTF-8"; <br />
+                span.emoji-women-holding-hands {
+                <pre>   font-family: IconFont;</pre>
+                <pre>   font-variant: normal;</pre>
+                <pre>   font-weight: normal;</pre>
+                <pre>   content: "👭";</pre>
+                }
+              </code>
+          </div>
+        </div>
+        <div class="funFact">
+          <h5>Fun fact:</h5>
+          <p>
+            Sass only parses selectors after interpolation is resolved. This
+            means you can safely use interpolation to generate any part of the
+            selector without worrying that it won’t parse.
+          </p>
+        </div>
+      </section>
+      <section class="main-section" id="Variables">
+        <header>
+          <h2>Variables</h2>
+        </header>
+        <p class="sub-title">
+          Sass variables are simple: you assign a value to a name that begins
+          with $, and then you can refer to that name instead of the value
+          itself. But despite their simplicity, they're one of the most useful
+          tools Sass brings to the table. Variables make it possible to reduce
+          repetition, do complex math, configure libraries, and much more.
+        </p>
+        <p>
+          A variable declaration looks a lot like a property declaration: it’s
+          written < variable>: < expression>. Unlike a property, which can
+              only be declared in a style rule or at-rule, variables can be
+              declared anywhere you want. To use a variable, just include it in a
+              value.
+        </p>
+        <div class="two-column">
+          <div class="code">
+            <h5>SCSS</h5>
+            <code>
+                $base-color: #c6538c; <br />
+                $border-dark: rgba($base-color, 0.88); <br /><br />
+                .alert {
+                <pre>   border: 1px solid $border-dark;</pre>
+                }
+              </code>
+          </div>
+          <div class="code">
+            <h5>CSS</h5>
+            <code>
+                .alert {
+                <pre>   border: 1px solid rgba(198, 83, 140, 0.88);</pre>
+                }
+              </code>
+          </div>
+        </div>
+        <div class="warning">
+          <h5>Heads up!</h5>
+          <p>
+            CSS has variables of its own, which are totally different than
+            Sass variables. Know the differences!
+          </p>
+          <ul>
+            <li>
+              Sass variables are all compiled away by Sass. CSS variables are
+              included in the CSS output
+            </li>
+            <li>
+              CSS variables can have different values for different elements,
+              but Sass variables only have one value at a time.
+            </li>
+            <li>
+              Sass variables are imperative, which means if you use a variable
+              and then change its value, the earlier use will stay the same.
+              CSS variables are declarative, which means if you change the
+              value, it’ll affect both earlier uses and later uses.
+            </li>
+          </ul>
+          <div class="two-column">
+            <div class="code">
+              <h5>SCSS</h5>
+              <code>
+                  $variable: value 1; <br />
+                  .rule-1 {
+                  <pre>   value: $variable;</pre>
+                  } <br /><br />
+                  $variable: value 2; <br />
+                  .rule-2 {
+                  <pre>   value: $variable;</pre>
+                  }
+                </code>
+            </div>
+            <div class="code">
+              <h5>CSS</h5>
+              <code>
+                  .rule-1 {
+                  <pre>   value: value 1;</pre>
+                  } <br /><br />
+                  .rule-2 {
+                  <pre>   value: value 2;</pre>
+                  }
+                </code>
+            </div>
+          </div>
+        </div>
+        <div class="funFact">
+          <h5>Fun fact:</h5>
+          <p>
+            Sass variables, like all Sass identifiers, treat hyphens and
+            underscores as identical. This means that $font-size and
+            $font_size both refer to the same variable. This is a historical
+            holdover from the very early days of Sass, when it only allowed
+            underscores in identifier names. Once Sass added support for
+            hyphens to match CSS’s syntax, the two were made equivalent to
+            make migration easier.
+          </p>
+        </div>
+      </section>
+      <section class="main-section" id="At-Rules">
+        <header>
+          <h2>At-Rules</h2>
+        </header>
+        <p class="sub-title">
+          Much of Sass’s extra functionality comes in the form of new at-rules
+          it adds on top of CSS:
+        </p>
+        <ul>
+          <li>
+            @import extends the CSS at-rule to load styles, mixins, functions,
+            and variables from other stylesheets.
+          </li>
+          <li>
+            @mixin and @include makes it easy re-use chunks of styles.
+          </li>
+          <li>
+            @function defines custom functions that can be used in SassScript
+            expressions.
+          </li>
+          <li>
+            @extend allows selectors to inherit styles from one another.
+          </li>
+          <li>
+            @at-root puts styles within it at the root of the CSS document.
+          </li>
+          <li>
+            @error causes compilation to fail with an error message.
+          </li>
+          <li>
+            @warn prints a warning without stopping compilation entirely.
+          </li>
+          <li>
+            @debug prints a message for debugging purposes.
+          </li>
+          <li>
+            Flow control rules like @if, @each, @for, and @while control
+            whether or how many times styles are emitted.
+          </li>
+        </ul>
+        <p>
+          Sass also has some special behavior for plain CSS at-rules: they can
+          contain interpolation, and they can be nested in style rules. Some
+          of them, like @media and @supports, also allow SassScript to be used
+          directly in the rule itself without interpolation.
+        </p>
+      </section>
+    </main>
+  </div>
+  <footer>
+    &copy; Designed by <a href="#">Konstantina Matthaiou</a> - Content by the
+    original
+    <a href="https://sass-lang.com/documentation">Sass Documentation</a>
+  </footer>
+</body>
+
+</html>
