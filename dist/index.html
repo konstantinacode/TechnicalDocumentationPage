@@ -85,26 +85,26 @@
         <p>SCSS looks like this:</p>
         <div class="code">
           <code>
-              @mixin button-base() {
-              <pre>   @include typography(button); </pre>
-              <pre>   @include ripple-surface; </pre>
-              <pre>   @include ripple-radius-bounded; </pre>
-              <br />
-              <pre>   display: inline-flex; </pre>
-              <pre>     position: relative; </pre>
-              <pre>     height: $button-height; </pre>
-              <pre>     border: none; </pre>
-              <pre>     vertical-align: middle; </pre>
-              <br />
-              <pre>   &:hover { cursor: pointer; }</pre>
-              <br />
-              <pre>   &:disabled { </pre>
-              <pre>     color: $mdc-button-disabled-ink-color; </pre>
-              <pre>     cursor: default;</pre>
-              <pre>     pointer-events: none; </pre>
-              <pre>   } </pre>
-              }
-            </code>
+            @mixin button-base() {
+            <pre>   @include typography(button); </pre>
+            <pre>   @include ripple-surface; </pre>
+            <pre>   @include ripple-radius-bounded; </pre>
+            <br />
+            <pre>   display: inline-flex; </pre>
+            <pre>     position: relative; </pre>
+            <pre>     height: $button-height; </pre>
+            <pre>     border: none; </pre>
+            <pre>     vertical-align: middle; </pre>
+            <br />
+            <pre>   &:hover { cursor: pointer; }</pre>
+            <br />
+            <pre>   &:disabled { </pre>
+            <pre>     color: $mdc-button-disabled-ink-color; </pre>
+            <pre>     cursor: default;</pre>
+            <pre>     pointer-events: none; </pre>
+            <pre>   } </pre>
+            }
+          </code>
         </div>
         <h4>The Indented Syntax</h4>
         <p>
@@ -124,25 +124,25 @@
         <p>The indented syntax looks like this:</p>
         <div class="code">
           <code>
-              @mixin button-base()
-              <pre>   @include typography(button) </pre>
-              <pre>   @include ripple-surface </pre>
-              <pre>   @include ripple-radius-bounded </pre>
-              <br />
-              <pre>   display: inline-flex </pre>
-              <pre>     position: relative </pre>
-              <pre>     height: $button-height </pre>
-              <pre>     border: none </pre>
-              <pre>     vertical-align: middle </pre>
-              <br />
-              <pre>   &:hover </pre>
-              <pre>     cursor: pointer</pre>
-              <br />
-              <pre>   &:disabled  </pre>
-              <pre>     color: $mdc-button-disabled-ink-color </pre>
-              <pre>     cursor: default</pre>
-              <pre>     pointer-events: none </pre>
-            </code>
+            @mixin button-base()
+            <pre>   @include typography(button) </pre>
+            <pre>   @include ripple-surface </pre>
+            <pre>   @include ripple-radius-bounded </pre>
+            <br />
+            <pre>   display: inline-flex </pre>
+            <pre>     position: relative </pre>
+            <pre>     height: $button-height </pre>
+            <pre>     border: none </pre>
+            <pre>     vertical-align: middle </pre>
+            <br />
+            <pre>   &:hover </pre>
+            <pre>     cursor: pointer</pre>
+            <br />
+            <pre>   &:disabled  </pre>
+            <pre>     color: $mdc-button-disabled-ink-color </pre>
+            <pre>     cursor: default</pre>
+            <pre>     pointer-events: none </pre>
+          </code>
         </div>
       </section>
       <section class="main-section" id="Style_Rules">
@@ -159,24 +159,24 @@
           <div class="code">
             <h5>SCSS</h5>
             <code>
-                .button {
-                <pre>   padding: 3px 10px;</pre>
-                <pre>   font-size: 12px; </pre>
-                <pre>   border-radius: 3px; </pre>
-                <pre>   border: 1px solid #e1e4e8; </pre>
-                }
-              </code>
+              .button {
+              <pre>   padding: 3px 10px;</pre>
+              <pre>   font-size: 12px; </pre>
+              <pre>   border-radius: 3px; </pre>
+              <pre>   border: 1px solid #e1e4e8; </pre>
+              }
+            </code>
           </div>
           <div class="code">
             <h5>CSS</h5>
             <code>
-                .button {
-                <pre>   padding: 3px 10px;</pre>
-                <pre>   font-size: 12px; </pre>
-                <pre>   border-radius: 3px; </pre>
-                <pre>   border: 1px solid #e1e4e8; </pre>
-                }
-              </code>
+              .button {
+              <pre>   padding: 3px 10px;</pre>
+              <pre>   font-size: 12px; </pre>
+              <pre>   border-radius: 3px; </pre>
+              <pre>   border: 1px solid #e1e4e8; </pre>
+              }
+            </code>
           </div>
         </div>
         <h4>Nesting</h4>
@@ -190,38 +190,38 @@
           <div class="code">
             <h5>SCSS</h5>
             <code>
-                nav {
-                <pre>   ul {</pre>
-                <pre>     margin: 0;</pre>
-                <pre>     padding: 0;</pre>
-                <pre>     list-style: none;</pre>
-                <pre>   }</pre>
-                <pre>   li { display: inline-block; }</pre>
-                <pre>   a {</pre>
-                <pre>     display: block;</pre>
-                <pre>     padding: 6px 12px;</pre>
-                <pre>     text-decoration: none;</pre>
-                <pre>   }</pre>
-                }
-              </code>
+              nav {
+              <pre>   ul {</pre>
+              <pre>     margin: 0;</pre>
+              <pre>     padding: 0;</pre>
+              <pre>     list-style: none;</pre>
+              <pre>   }</pre>
+              <pre>   li { display: inline-block; }</pre>
+              <pre>   a {</pre>
+              <pre>     display: block;</pre>
+              <pre>     padding: 6px 12px;</pre>
+              <pre>     text-decoration: none;</pre>
+              <pre>   }</pre>
+              }
+            </code>
           </div>
           <div class="code">
             <h5>CSS</h5>
             <code>
-                nav ul {
-                <pre>   margin: 0;</pre>
-                <pre>   padding: 0;</pre>
-                <pre>   list-style: none;</pre>
-                } <br />
-                nav li {
-                <pre>   display: inline-block;</pre>
-                } <br />
-                nav a {
-                <pre>   display: block;</pre>
-                <pre>   padding: 6px 12px;</pre>
-                <pre>   text-decoration: none;</pre>
-                }
-              </code>
+              nav ul {
+              <pre>   margin: 0;</pre>
+              <pre>   padding: 0;</pre>
+              <pre>   list-style: none;</pre>
+              } <br />
+              nav li {
+              <pre>   display: inline-block;</pre>
+              } <br />
+              nav a {
+              <pre>   display: block;</pre>
+              <pre>   padding: 6px 12px;</pre>
+              <pre>   text-decoration: none;</pre>
+              }
+            </code>
           </div>
         </div>
         <div class="warning">
@@ -245,24 +245,24 @@
           <div class="code">
             <h5>SCSS</h5>
             <code>
-                .alert, .warning {
-                <pre>   ul, p {</pre>
-                <pre>     margin-right: 0;</pre>
-                <pre>     margin-left: 0;</pre>
-                <pre>     padding-bottom: 0;</pre>
-                <pre>   }</pre>
-                }
-              </code>
+              .alert, .warning {
+              <pre>   ul, p {</pre>
+              <pre>     margin-right: 0;</pre>
+              <pre>     margin-left: 0;</pre>
+              <pre>     padding-bottom: 0;</pre>
+              <pre>   }</pre>
+              }
+            </code>
           </div>
           <div class="code">
             <h5>CSS</h5>
             <code>
-                .alert ul, .alert p, .warning ul, .warning p {
-                <pre>   margin-right: 0;</pre>
-                <pre>   margin-left: 0;</pre>
-                <pre>   padding-bottom: 0;</pre>
-                }
-              </code>
+              .alert ul, .alert p, .warning ul, .warning p {
+              <pre>   margin-right: 0;</pre>
+              <pre>   margin-left: 0;</pre>
+              <pre>   padding-bottom: 0;</pre>
+              }
+            </code>
           </div>
         </div>
         <h5>Selector Combinators</h5>
@@ -275,38 +275,38 @@
           <div class="code">
             <h5>SCSS</h5>
             <code>
-                ul > {
-                <pre>   li {</pre>
-                <pre>     list-style-type: none;</pre>
-                <pre>   }</pre>
-                } <br />
-                h2 {
-                <pre>   + p {</pre>
-                <pre>     border-top: 1px solid gray;</pre>
-                <pre>   }</pre>
-                } <br />
-                p {
-                <pre>   ~ {</pre>
-                <pre>     span {</pre>
-                <pre>       opacity: 0.8;</pre>
-                <pre>     }</pre>
-                <pre>   }</pre>
-                }
-              </code>
+              ul > {
+              <pre>   li {</pre>
+              <pre>     list-style-type: none;</pre>
+              <pre>   }</pre>
+              } <br />
+              h2 {
+              <pre>   + p {</pre>
+              <pre>     border-top: 1px solid gray;</pre>
+              <pre>   }</pre>
+              } <br />
+              p {
+              <pre>   ~ {</pre>
+              <pre>     span {</pre>
+              <pre>       opacity: 0.8;</pre>
+              <pre>     }</pre>
+              <pre>   }</pre>
+              }
+            </code>
           </div>
           <div class="code">
             <h5>CSS</h5>
             <code>
-                ul > li {
-                <pre>   list-style-type: none;</pre>
-                } <br />
-                h2 + p {
-                <pre>   border-top: 1px solid gray;</pre>
-                } <br />
-                p ~ span {
-                <pre>   opacity: 0.8;</pre>
-                }
-              </code>
+              ul > li {
+              <pre>   list-style-type: none;</pre>
+              } <br />
+              h2 + p {
+              <pre>   border-top: 1px solid gray;</pre>
+              } <br />
+              p ~ span {
+              <pre>   opacity: 0.8;</pre>
+              }
+            </code>
           </div>
         </div>
         <h5>Advanced Nesting</h5>
@@ -327,29 +327,29 @@
           <div class="code">
             <h5>SCSS</h5>
             <code>
-                @mixin define-emoji($name, $glyph) {
-                <pre>   span.emoji-#{$name} {</pre>
-                <pre>     font-family: IconFont;</pre>
-                <pre>     font-variant: normal;</pre>
-                <pre>     font-weight: normal;</pre>
-                <pre>     content: $glyph;</pre>
-                <pre>   }</pre>
+              @mixin define-emoji($name, $glyph) {
+              <pre>   span.emoji-#{$name} {</pre>
+              <pre>     font-family: IconFont;</pre>
+              <pre>     font-variant: normal;</pre>
+              <pre>     font-weight: normal;</pre>
+              <pre>     content: $glyph;</pre>
+              <pre>   }</pre>
 
-                }<br />
-                @include define-emoji("women-holding-hands", "👭");
-              </code>
+              }<br />
+              @include define-emoji("women-holding-hands", "👭");
+            </code>
           </div>
           <div class="code">
             <h5>CSS</h5>
             <code>
-                @charset "UTF-8"; <br />
-                span.emoji-women-holding-hands {
-                <pre>   font-family: IconFont;</pre>
-                <pre>   font-variant: normal;</pre>
-                <pre>   font-weight: normal;</pre>
-                <pre>   content: "👭";</pre>
-                }
-              </code>
+              @charset "UTF-8"; <br />
+              span.emoji-women-holding-hands {
+              <pre>   font-family: IconFont;</pre>
+              <pre>   font-variant: normal;</pre>
+              <pre>   font-weight: normal;</pre>
+              <pre>   content: "👭";</pre>
+              }
+            </code>
           </div>
         </div>
         <div class="funFact">
@@ -383,20 +383,20 @@
           <div class="code">
             <h5>SCSS</h5>
             <code>
-                $base-color: #c6538c; <br />
-                $border-dark: rgba($base-color, 0.88); <br /><br />
-                .alert {
-                <pre>   border: 1px solid $border-dark;</pre>
-                }
-              </code>
+              $base-color: #c6538c; <br />
+              $border-dark: rgba($base-color, 0.88); <br /><br />
+              .alert {
+              <pre>   border: 1px solid $border-dark;</pre>
+              }
+            </code>
           </div>
           <div class="code">
             <h5>CSS</h5>
             <code>
-                .alert {
-                <pre>   border: 1px solid rgba(198, 83, 140, 0.88);</pre>
-                }
-              </code>
+              .alert {
+              <pre>   border: 1px solid rgba(198, 83, 140, 0.88);</pre>
+              }
+            </code>
           </div>
         </div>
         <div class="warning">
@@ -425,26 +425,26 @@
             <div class="code">
               <h5>SCSS</h5>
               <code>
-                  $variable: value 1; <br />
-                  .rule-1 {
-                  <pre>   value: $variable;</pre>
-                  } <br /><br />
-                  $variable: value 2; <br />
-                  .rule-2 {
-                  <pre>   value: $variable;</pre>
-                  }
-                </code>
+                $variable: value 1; <br />
+                .rule-1 {
+                <pre>   value: $variable;</pre>
+                } <br /><br />
+                $variable: value 2; <br />
+                .rule-2 {
+                <pre>   value: $variable;</pre>
+                }
+              </code>
             </div>
             <div class="code">
               <h5>CSS</h5>
               <code>
-                  .rule-1 {
-                  <pre>   value: value 1;</pre>
-                  } <br /><br />
-                  .rule-2 {
-                  <pre>   value: value 2;</pre>
-                  }
-                </code>
+                .rule-1 {
+                <pre>   value: value 1;</pre>
+                } <br /><br />
+                .rule-2 {
+                <pre>   value: value 2;</pre>
+                }
+              </code>
             </div>
           </div>
         </div>
@@ -511,7 +511,8 @@
     </main>
   </div>
   <footer>
-    &copy; Designed by <a href="#">Konstantina Matthaiou</a> - Content by the
+    &copy; Designed by <a href="mailto:konstantina_mat@hotmail.com?subject=Contact%20Mail">Konstantina Matthaiou</a> -
+    Content by the
     original
     <a href="https://sass-lang.com/documentation">Sass Documentation</a>
   </footer>
